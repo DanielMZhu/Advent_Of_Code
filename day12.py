@@ -1209,3 +1209,23 @@ end = time.time()
 print(ans)
 print(end-start,"seconds")
     
+def part_2(line):
+    s = line.split(" ")
+    a = s[0]
+    n = s[1]
+    for i in range(4):
+        a+="?"+s[0]
+        n+=","+s[1]
+    return a+" "+n
+
+start = time.time()  
+ans = 0
+lines = input.split("\n")
+for line in lines:
+    part_two_line = part_2(line)
+    arr, nums = preprocess(part_two_line)
+    s = solves(arr,nums)
+    ans+=s
+end = time.time()
+print(ans)
+print(end-start,"seconds")

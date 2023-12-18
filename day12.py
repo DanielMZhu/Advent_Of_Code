@@ -1122,16 +1122,10 @@ def solve(arr, nums):
                         if check_remaining_not_positive(arr[next_i:]):
                             count+=1
                             return count
-                        else:
-                            # doing is bad, should skip
-                            continue 
 
                     else:
                         # more to be done, not end of array still nums left
                         count += solve(arr[next_i:], temp_nums)
-                else:
-                    # nope
-                    continue
             else:
                 temp_arr[curr_i] = 1
                 temp_nums[0] = temp_nums[0]-1
